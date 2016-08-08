@@ -1,0 +1,34 @@
+﻿@model CustomWindowsAuthentication.Models.UsuarioPerfil
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UsuarioPerfil</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Perfil.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Perfil.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioLogin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioLogin)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UsuarioPerfilId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CustomWindowsAuthentication.Models.UsuarioPerfil>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Perfil.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsuarioLogin)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Perfil.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsuarioLogin)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UsuarioPerfilId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UsuarioPerfilId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UsuarioPerfilId })
+        </td>
+    </tr>
+}
+
+</table>
