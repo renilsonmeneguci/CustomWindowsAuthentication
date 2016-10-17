@@ -23,6 +23,13 @@ namespace CustomWindowsAuthentication.Infraestructure.Attributes
         {
             if (Perfis == null) return false;
 
+            //HttpCookie cookie = HttpContext.Current.Request.Cookies.Get("Asp.NetCookie");
+
+            //if(cookie == null)
+            //{
+            //    HttpContext.Current.Response.Cookies.Add(new HttpCookie("Asp.NetCookie", "CookieValue"));
+            //}
+
             var username = httpContext.User.Identity.Name;
 
             var perfisUsuario = db.UsuarioPerfis.Include(p => p.Perfil).Where(p => p.UsuarioLogin == username).ToList();
